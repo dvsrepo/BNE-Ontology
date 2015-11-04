@@ -1,0 +1,10 @@
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix dc: <http://purl.org/dc/terms/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+<..\index.html> a prov:Entity;
+	 dc:title "BNE ontology";
+	 prov:wasAttributedTo [ a prov:Agent; foaf:name "Biblioteca Nacional de España".];
+	 prov:wasAttributedTo [ a prov:Agent; foaf:name "Daniel Vila-Suero".];
+	 prov:wasAttributedTo [ a prov:Agent; foaf:name "Ricardo Santos Muñoz".];
+	 prov:wasAttributedTo <https://github.com/dgarijo/Widoco/>,<http://www.essepuntato.it/lode/>;
+	 prov:wasGeneratedAt "02-10-2015".

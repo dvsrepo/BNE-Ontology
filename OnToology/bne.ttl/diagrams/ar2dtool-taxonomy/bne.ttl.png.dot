@@ -1,0 +1,12 @@
+digraph ar2dtool_diagram { 
+rankdir=LR;
+size="1000"
+node [shape = rectangle, color="black"]; "http://iflastandards.info/ns/fr/frbr/frbrer/C1002" "bneonto:C1003" "bneonto:C1001" "bneonto:C1005" "bneonto:C1002" "bneonto:C1006" "http://iflastandards.info/ns/fr/frbr/frbrer/C1005" "bneonto:C1004" "http://iflastandards.info/ns/fr/frbr/frbrer/C1003" "http://iflastandards.info/ns/fr/frbr/frbrer/C1006" "http://iflastandards.info/ns/fr/frbr/frbrer/C1001" "http://iflastandards.info/ns/fr/frbr/frbrer/C1004" ; /*classes style*/
+	"http://iflastandards.info/ns/fr/frbr/frbrer/C1001" -> "bneonto:C1001" [ label = "rdfs:subClassOf" ];
+	"http://iflastandards.info/ns/fr/frbr/frbrer/C1006" -> "bneonto:C1006" [ label = "rdfs:subClassOf" ];
+	"http://iflastandards.info/ns/fr/frbr/frbrer/C1004" -> "bneonto:C1004" [ label = "rdfs:subClassOf" ];
+	"http://iflastandards.info/ns/fr/frbr/frbrer/C1002" -> "bneonto:C1002" [ label = "rdfs:subClassOf" ];
+	"http://iflastandards.info/ns/fr/frbr/frbrer/C1005" -> "bneonto:C1005" [ label = "rdfs:subClassOf" ];
+	"http://iflastandards.info/ns/fr/frbr/frbrer/C1003" -> "bneonto:C1003" [ label = "rdfs:subClassOf" ];
+
+}
