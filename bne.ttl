@@ -9,6 +9,7 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix vann: <http://purl.org/vocab/vann/> .
 @prefix terms: <http://purl.org/dc/terms/> .
+@prefix frbr: <http://iflastandards.info/ns/fr/frbr/frbrer/> .
 @base <http://datos.bne.es/def/> .
 
 <http://datos.bne.es/def/> rdf:type owl:Ontology ;
@@ -3537,9 +3538,9 @@ def:C1006 rdf:type owl:Class ;
 
 ###  http://iflastandards.info/ns/fr/frbr/frbrer/C1001
 
-<http://iflastandards.info/ns/fr/frbr/frbrer/C1001> rdf:type owl:Class ;
+def:C1001 rdf:type owl:Class ;
                                                     
-                                                    rdfs:subClassOf def:C1001 ;
+                                                    rdfs:subClassOf frbr:C1001 ;
                                                     
                                                     rdfs:comment "http://iflastandards.info/ns/fr/frbr/frbrer/C1001" .
 
@@ -3547,9 +3548,9 @@ def:C1006 rdf:type owl:Class ;
 
 ###  http://iflastandards.info/ns/fr/frbr/frbrer/C1002
 
-<http://iflastandards.info/ns/fr/frbr/frbrer/C1002> rdf:type owl:Class ;
+def:C1002 rdf:type owl:Class ;
                                                     
-                                                    rdfs:subClassOf def:C1002 ;
+                                                    rdfs:subClassOf frbr:C1002 ;
                                                     
                                                     rdfs:comment "http://iflastandards.info/ns/fr/frbr/frbrer/C1002" .
 
@@ -3557,9 +3558,9 @@ def:C1006 rdf:type owl:Class ;
 
 ###  http://iflastandards.info/ns/fr/frbr/frbrer/C1003
 
-<http://iflastandards.info/ns/fr/frbr/frbrer/C1003> rdf:type owl:Class ;
+def:C1003 rdf:type owl:Class ;
                                                     
-                                                    rdfs:subClassOf def:C1003 ;
+                                                    rdfs:subClassOf frbr:C1003 ;
                                                     
                                                     rdfs:comment "http://iflastandards.info/ns/fr/frbr/frbrer/C1003" .
 
@@ -3567,9 +3568,9 @@ def:C1006 rdf:type owl:Class ;
 
 ###  http://iflastandards.info/ns/fr/frbr/frbrer/C1004
 
-<http://iflastandards.info/ns/fr/frbr/frbrer/C1004> rdf:type owl:Class ;
+def:C1004 rdf:type owl:Class ;
                                                     
-                                                    rdfs:subClassOf def:C1004 ;
+                                                    rdfs:subClassOf frbr:C1004 ;
                                                     
                                                     rdfs:comment "http://iflastandards.info/ns/fr/frbr/frbrer/C1004" .
 
@@ -3577,9 +3578,9 @@ def:C1006 rdf:type owl:Class ;
 
 ###  http://iflastandards.info/ns/fr/frbr/frbrer/C1005
 
-<http://iflastandards.info/ns/fr/frbr/frbrer/C1005> rdf:type owl:Class ;
+def:C1005 rdf:type owl:Class ;
                                                     
-                                                    rdfs:subClassOf def:C1005 ;
+                                                    rdfs:subClassOf frbr:C1005 ;
                                                     
                                                     rdfs:comment "http://iflastandards.info/ns/fr/frbr/frbrer/C1005" .
 
@@ -3587,9 +3588,9 @@ def:C1006 rdf:type owl:Class ;
 
 ###  http://iflastandards.info/ns/fr/frbr/frbrer/C1006
 
-<http://iflastandards.info/ns/fr/frbr/frbrer/C1006> rdf:type owl:Class ;
+def:C1006 rdf:type owl:Class ;
                                                     
-                                                    rdfs:subClassOf def:C1006 ;
+                                                    rdfs:subClassOf frbr:C1006 ;
                                                     
                                                     rdfs:comment "http://iflastandards.info/ns/fr/frbr/frbrer/C1006" .
 
