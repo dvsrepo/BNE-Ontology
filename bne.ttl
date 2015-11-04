@@ -5,12 +5,16 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix frad: <http://iflastandards.info/ns/fr/frad/> .
+@prefix frbr: <http://iflastandards.info/ns/fr/frbr/frbrer/> .
+@prefix isbd: <http://iflastandards.info/ns/isbd/elements/> .
 @prefix rdaa: <http://rdaregistry.info/Elements/a/> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix vann: <http://purl.org/vocab/vann/> .
 @prefix terms: <http://purl.org/dc/terms/> .
-@prefix frbr: <http://iflastandards.info/ns/fr/frbr/frbrer/> .
+@prefix bibo: <http://purl.org/ontology/bibo/> .
 @base <http://datos.bne.es/def/> .
+
 
 <http://datos.bne.es/def/> rdf:type owl:Ontology ;
                            
@@ -30,6 +34,8 @@
                            
                            owl:versionInfo "1.0" ;
                            
+                           terms:title "BNE ontology"@en ;
+                           
                            dc:contributor "Daniel Vila-Suero" ;
                            
                            terms:modified "02-10-2015" ;
@@ -46,8 +52,6 @@
                            terms:abstract "La ontología de la Biblioteca Nacional de España (BNE) es el modelo de datos central que se utiliza en datos.bne.es, la base de conocimiento abierta de la BNE. datos.bne.es recoge, integra y estructura información del catálogo y las digitalizaciones producidas en los sistemas de información de la BNE poniendola disponible utilizando tecnologías semánticas y datos enlazados."@es ;
                            
                            vann:preferredNamespacePrefix "bneonto" ;
-                           
-                           terms:title "BNE ontology"@en ;
                            
                            rdfs:comment "La ontología de la Biblioteca Nacional de España (BNE) es el modelo de datos central que se utiliza en datos.bne.es, la base de conocimiento abierta de la BNE. datos.bne.es recoge, integra y estructura información del catálogo y las digitalizaciones producidas en los sistemas de información de la BNE poniendola disponible utilizando tecnologías semánticas y datos enlazados."@es ;
                            
@@ -157,7 +161,9 @@ def:OP1001 rdf:type owl:ObjectProperty ;
            
            rdfs:range def:C1005 ;
            
-           owl:inverseOf def:OP5001 .
+           owl:inverseOf def:OP5001 ;
+           
+           rdfs:subPropertyOf frbr:P2009 .
 
 
 
@@ -174,7 +180,9 @@ def:OP1002 rdf:type owl:ObjectProperty ;
            
            rdfs:range def:C1002 ;
            
-           owl:inverseOf def:OP2002 .
+           owl:inverseOf def:OP2002 ;
+           
+           rdfs:subPropertyOf frbr:P2001 .
 
 
 
@@ -191,7 +199,9 @@ def:OP1003 rdf:type owl:ObjectProperty ;
            
            rdfs:range def:C1001 ;
            
-           owl:inverseOf def:OP1004 .
+           owl:inverseOf def:OP1004 ;
+           
+           rdfs:subPropertyOf frbr:P2057 .
 
 
 
@@ -206,7 +216,9 @@ def:OP1004 rdf:type owl:ObjectProperty ;
            
            rdfs:range def:C1001 ;
            
-           rdfs:domain def:C1001 .
+           rdfs:domain def:C1001 ;
+           
+           rdfs:subPropertyOf frbr:P2058 .
 
 
 
@@ -221,7 +233,9 @@ def:OP1005 rdf:type owl:ObjectProperty ;
            
            rdfs:domain def:C1001 ;
            
-           rdfs:range def:C1006 .
+           rdfs:range def:C1006 ;
+           
+           rdfs:subPropertyOf frbr:P2007 .
 
 
 
@@ -236,7 +250,9 @@ def:OP1006 rdf:type owl:ObjectProperty ;
            
            rdfs:domain def:C1001 ;
            
-           rdfs:range def:C1001 .
+           rdfs:range def:C1001 ;
+           
+           rdfs:subPropertyOf frbr:P2035 .
 
 
 
@@ -253,7 +269,9 @@ def:OP1007 rdf:type owl:ObjectProperty ;
            
            rdfs:domain def:C1001 ;
            
-           owl:inverseOf def:OP1006 .
+           owl:inverseOf def:OP1006 ;
+           
+           rdfs:subPropertyOf frbr:P2036 .
 
 
 
@@ -268,7 +286,9 @@ def:OP1008 rdf:type owl:ObjectProperty ;
            
            rdfs:domain def:C1001 ;
            
-           rdfs:range def:C1005 .
+           rdfs:range def:C1005 ;
+           
+           rdfs:subPropertyOf frbr:P2033 .
 
 
 
@@ -283,7 +303,9 @@ def:OP1009 rdf:type owl:ObjectProperty ;
            
            rdfs:domain def:C1001 ;
            
-           rdfs:range def:C1002 .
+           rdfs:range def:C1002 ;
+           
+           rdfs:subPropertyOf frbr:P2037 .
 
 
 
@@ -298,7 +320,9 @@ def:OP1010 rdf:type owl:ObjectProperty ;
            
            rdfs:domain def:C1001 ;
            
-           rdfs:range def:C1006 .
+           rdfs:range def:C1006 ;
+           
+           rdfs:subPropertyOf frbr:P2031 .
 
 
 
@@ -313,7 +337,9 @@ def:OP2001 rdf:type owl:ObjectProperty ;
            
            rdfs:domain def:C1002 ;
            
-           rdfs:range def:C1003 .
+           rdfs:range def:C1003 ;
+           
+           rdfs:subPropertyOf frbr:P2003 .
 
 
 
@@ -329,7 +355,9 @@ def:OP2002 rdf:type owl:ObjectProperty ;
            
            rdfs:range def:C1001 ;
            
-           rdfs:domain def:C1002 .
+           rdfs:domain def:C1002 ;
+           
+           rdfs:subPropertyOf frbr:P2002 .
 
 
 
@@ -344,7 +372,9 @@ def:OP2003 rdf:type owl:ObjectProperty ;
            
            rdfs:range def:C1002 ;
            
-           rdfs:domain def:C1002 .
+           rdfs:domain def:C1002 ;
+           
+           rdfs:subPropertyOf frbr:P2079 .
 
 
 
@@ -361,7 +391,9 @@ def:OP2004 rdf:type owl:ObjectProperty ;
            
            rdfs:domain def:C1002 ;
            
-           owl:inverseOf def:OP2003 .
+           owl:inverseOf def:OP2003 ;
+           
+           rdfs:subPropertyOf frbr:P2080 .
 
 
 
@@ -378,7 +410,9 @@ def:OP2005 rdf:type owl:ObjectProperty ;
            
            rdfs:domain def:C1002 ;
            
-           owl:inverseOf def:OP1009 .
+           owl:inverseOf def:OP1009 ;
+           
+           rdfs:subPropertyOf frbr:P2038 .
 
 
 
@@ -395,7 +429,9 @@ def:OP3001 rdf:type owl:ObjectProperty ;
            
            rdfs:range def:C1004 ;
            
-           owl:inverseOf def:OP4001 .
+           owl:inverseOf def:OP4001 ;
+           
+           rdfs:subPropertyOf frbr:P2005 .
 
 
 
@@ -412,7 +448,9 @@ def:OP3002 rdf:type owl:ObjectProperty ;
            
            rdfs:domain def:C1003 ;
            
-           owl:inverseOf def:OP2001 .
+           owl:inverseOf def:OP2001 ;
+           
+           rdfs:subPropertyOf frbr:P2004 .
 
 
 
@@ -502,7 +540,9 @@ def:OP3008 rdf:type owl:ObjectProperty ;
            
            rdfs:isDefinedBy "http://datos.bne.es/def/" ;
            
-           rdfs:domain def:C1003 .
+           rdfs:domain def:C1003 ;
+           
+           rdfs:subPropertyOf <http://rdaregistry.info/Elements/rof/P10018> .
 
 
 
@@ -517,7 +557,9 @@ def:OP4001 rdf:type owl:ObjectProperty ;
            
            rdfs:range def:C1003 ;
            
-           rdfs:domain def:C1004 .
+           rdfs:domain def:C1004 ;
+           
+           rdfs:subPropertyOf frbr:P2006 .
 
 
 
@@ -532,7 +574,9 @@ def:OP5001 rdf:type owl:ObjectProperty ;
            
            rdfs:range def:C1001 ;
            
-           rdfs:domain def:C1005 .
+           rdfs:domain def:C1005 ;
+           
+           rdfs:subPropertyOf frbr:P2010 .
 
 
 
@@ -566,7 +610,9 @@ def:OP5003 rdf:type owl:ObjectProperty ;
            
            rdfs:domain def:C1005 ;
            
-           owl:inverseOf def:OP1008 .
+           owl:inverseOf def:OP1008 ;
+           
+           rdfs:subPropertyOf frbr:P2034 .
 
 
 
@@ -583,7 +629,9 @@ def:OP6001 rdf:type owl:ObjectProperty ;
            
            rdfs:domain def:C1006 ;
            
-           owl:inverseOf def:OP1005 .
+           owl:inverseOf def:OP1005 ;
+           
+           rdfs:subPropertyOf frbr:P2008 .
 
 
 
@@ -600,7 +648,9 @@ def:OP6002 rdf:type owl:ObjectProperty ;
            
            rdfs:range def:C1006 ;
            
-           owl:inverseOf def:OP6003 .
+           owl:inverseOf def:OP6003 ;
+           
+           rdfs:subPropertyOf frad:P4015 .
 
 
 
@@ -615,7 +665,9 @@ def:OP6003 rdf:type owl:ObjectProperty ;
            
            rdfs:range def:C1006 ;
            
-           rdfs:domain def:C1006 .
+           rdfs:domain def:C1006 ;
+           
+           rdfs:subPropertyOf frad:P4014 .
 
 
 
@@ -641,7 +693,9 @@ def:OP6005 rdf:type owl:ObjectProperty ;
            rdfs:label "is subject (corporate body) of"@en ,
                       "es materia (entidad corporativa) de "@es ;
            
-           rdfs:isDefinedBy "http://datos.bne.es/def/" .
+           rdfs:isDefinedBy "http://datos.bne.es/def/" ;
+           
+           rdfs:subPropertyOf frbr:P2032 .
 
 
 
@@ -654,257 +708,255 @@ def:OP7001 rdf:type owl:ObjectProperty ;
            
            rdfs:isDefinedBy "http://datos.bne.es/def/" ;
            
-           rdfs:domain def:C1001 .
+           rdfs:domain def:C1001 ;
+           
+           rdfs:subPropertyOf frbr:P2023 .
 
 
 
 ###  http://iflastandards.info/ns/fr/frad/P4014
 
-<http://iflastandards.info/ns/fr/frad/P4014> rdf:type owl:ObjectProperty ;
-                                             
-                                             rdfs:comment "http://iflastandards.info/ns/fr/frad/P4014" ;
-                                             
-                                             rdfs:subPropertyOf def:OP6003 .
+frad:P4014 rdf:type owl:ObjectProperty ;
+           
+           rdfs:comment "http://iflastandards.info/ns/fr/frad/P4014" ;
+           
+           rdfs:subPropertyOf owl:topObjectProperty .
 
 
 
 ###  http://iflastandards.info/ns/fr/frad/P4015
 
-<http://iflastandards.info/ns/fr/frad/P4015> rdf:type owl:ObjectProperty ;
-                                             
-                                             rdfs:comment "http://iflastandards.info/ns/fr/frad/P4015" ;
-                                             
-                                             rdfs:subPropertyOf def:OP6002 .
+frad:P4015 rdf:type owl:ObjectProperty ;
+           
+           rdfs:comment "http://iflastandards.info/ns/fr/frad/P4015" ;
+           
+           rdfs:subPropertyOf owl:topObjectProperty .
 
 
 
 ###  http://iflastandards.info/ns/fr/frbr/frbrer/P2001
 
-<http://iflastandards.info/ns/fr/frbr/frbrer/P2001> rdf:type owl:ObjectProperty ;
-                                                    
-                                                    rdfs:comment "http://iflastandards.info/ns/fr/frbr/frbrer/P2001" ;
-                                                    
-                                                    rdfs:subPropertyOf def:OP1002 .
+frbr:P2001 rdf:type owl:ObjectProperty ;
+           
+           rdfs:comment "http://iflastandards.info/ns/fr/frbr/frbrer/P2001" .
 
 
 
 ###  http://iflastandards.info/ns/fr/frbr/frbrer/P2002
 
-<http://iflastandards.info/ns/fr/frbr/frbrer/P2002> rdf:type owl:ObjectProperty ;
-                                                    
-                                                    rdfs:comment "http://iflastandards.info/ns/fr/frbr/frbrer/P2002" ;
-                                                    
-                                                    rdfs:subPropertyOf def:OP2002 .
+frbr:P2002 rdf:type owl:ObjectProperty ;
+           
+           rdfs:comment "http://iflastandards.info/ns/fr/frbr/frbrer/P2002" ;
+           
+           rdfs:subPropertyOf owl:topObjectProperty .
 
 
 
 ###  http://iflastandards.info/ns/fr/frbr/frbrer/P2003
 
-<http://iflastandards.info/ns/fr/frbr/frbrer/P2003> rdf:type owl:ObjectProperty ;
-                                                    
-                                                    rdfs:comment "http://iflastandards.info/ns/fr/frbr/frbrer/P2003" ;
-                                                    
-                                                    rdfs:subPropertyOf def:OP2001 .
+frbr:P2003 rdf:type owl:ObjectProperty ;
+           
+           rdfs:comment "http://iflastandards.info/ns/fr/frbr/frbrer/P2003" ;
+           
+           rdfs:subPropertyOf owl:topObjectProperty .
 
 
 
 ###  http://iflastandards.info/ns/fr/frbr/frbrer/P2004
 
-<http://iflastandards.info/ns/fr/frbr/frbrer/P2004> rdf:type owl:ObjectProperty ;
-                                                    
-                                                    rdfs:comment "http://iflastandards.info/ns/fr/frbr/frbrer/P2004" ;
-                                                    
-                                                    rdfs:subPropertyOf def:OP3002 .
+frbr:P2004 rdf:type owl:ObjectProperty ;
+           
+           rdfs:comment "http://iflastandards.info/ns/fr/frbr/frbrer/P2004" ;
+           
+           rdfs:subPropertyOf owl:topObjectProperty .
 
 
 
 ###  http://iflastandards.info/ns/fr/frbr/frbrer/P2005
 
-<http://iflastandards.info/ns/fr/frbr/frbrer/P2005> rdf:type owl:ObjectProperty ;
-                                                    
-                                                    rdfs:comment "http://iflastandards.info/ns/fr/frbr/frbrer/P2005" ;
-                                                    
-                                                    rdfs:subPropertyOf def:OP3001 .
+frbr:P2005 rdf:type owl:ObjectProperty ;
+           
+           rdfs:comment "http://iflastandards.info/ns/fr/frbr/frbrer/P2005" ;
+           
+           rdfs:subPropertyOf owl:topObjectProperty .
 
 
 
 ###  http://iflastandards.info/ns/fr/frbr/frbrer/P2006
 
-<http://iflastandards.info/ns/fr/frbr/frbrer/P2006> rdf:type owl:ObjectProperty ;
-                                                    
-                                                    rdfs:comment "http://iflastandards.info/ns/fr/frbr/frbrer/P2006" ;
-                                                    
-                                                    rdfs:subPropertyOf def:OP4001 .
+frbr:P2006 rdf:type owl:ObjectProperty ;
+           
+           rdfs:comment "http://iflastandards.info/ns/fr/frbr/frbrer/P2006" ;
+           
+           rdfs:subPropertyOf owl:topObjectProperty .
 
 
 
 ###  http://iflastandards.info/ns/fr/frbr/frbrer/P2007
 
-<http://iflastandards.info/ns/fr/frbr/frbrer/P2007> rdf:type owl:ObjectProperty ;
-                                                    
-                                                    rdfs:comment "http://iflastandards.info/ns/fr/frbr/frbrer/P2007" ;
-                                                    
-                                                    rdfs:subPropertyOf def:OP1005 .
+frbr:P2007 rdf:type owl:ObjectProperty ;
+           
+           rdfs:comment "http://iflastandards.info/ns/fr/frbr/frbrer/P2007" ;
+           
+           rdfs:subPropertyOf owl:topObjectProperty .
 
 
 
 ###  http://iflastandards.info/ns/fr/frbr/frbrer/P2008
 
-<http://iflastandards.info/ns/fr/frbr/frbrer/P2008> rdf:type owl:ObjectProperty ;
-                                                    
-                                                    rdfs:comment "http://iflastandards.info/ns/fr/frbr/frbrer/P2008" ;
-                                                    
-                                                    rdfs:subPropertyOf def:OP6001 .
+frbr:P2008 rdf:type owl:ObjectProperty ;
+           
+           rdfs:comment "http://iflastandards.info/ns/fr/frbr/frbrer/P2008" ;
+           
+           rdfs:subPropertyOf owl:topObjectProperty .
 
 
 
 ###  http://iflastandards.info/ns/fr/frbr/frbrer/P2009
 
-<http://iflastandards.info/ns/fr/frbr/frbrer/P2009> rdf:type owl:ObjectProperty ;
-                                                    
-                                                    rdfs:comment "http://iflastandards.info/ns/fr/frbr/frbrer/P2009" ;
-                                                    
-                                                    rdfs:subPropertyOf def:OP1001 .
+frbr:P2009 rdf:type owl:ObjectProperty ;
+           
+           rdfs:comment "http://iflastandards.info/ns/fr/frbr/frbrer/P2009" .
 
 
 
 ###  http://iflastandards.info/ns/fr/frbr/frbrer/P2010
 
-<http://iflastandards.info/ns/fr/frbr/frbrer/P2010> rdf:type owl:ObjectProperty ;
-                                                    
-                                                    rdfs:comment "http://iflastandards.info/ns/fr/frbr/frbrer/P2010" ;
-                                                    
-                                                    rdfs:subPropertyOf def:OP5001 .
+frbr:P2010 rdf:type owl:ObjectProperty ;
+           
+           rdfs:comment "http://iflastandards.info/ns/fr/frbr/frbrer/P2010" ;
+           
+           rdfs:subPropertyOf owl:topObjectProperty .
 
 
 
 ###  http://iflastandards.info/ns/fr/frbr/frbrer/P2023
 
-<http://iflastandards.info/ns/fr/frbr/frbrer/P2023> rdf:type owl:ObjectProperty ;
-                                                    
-                                                    rdfs:comment "http://iflastandards.info/ns/fr/frbr/frbrer/P2023" ;
-                                                    
-                                                    rdfs:subPropertyOf def:OP7001 .
+frbr:P2023 rdf:type owl:ObjectProperty ;
+           
+           rdfs:comment "http://iflastandards.info/ns/fr/frbr/frbrer/P2023" ;
+           
+           rdfs:subPropertyOf owl:topObjectProperty .
 
 
 
 ###  http://iflastandards.info/ns/fr/frbr/frbrer/P2031
 
-<http://iflastandards.info/ns/fr/frbr/frbrer/P2031> rdf:type owl:ObjectProperty ;
-                                                    
-                                                    rdfs:comment "http://iflastandards.info/ns/fr/frbr/frbrer/P2031" ;
-                                                    
-                                                    rdfs:subPropertyOf def:OP1010 .
+frbr:P2031 rdf:type owl:ObjectProperty ;
+           
+           rdfs:comment "http://iflastandards.info/ns/fr/frbr/frbrer/P2031" ;
+           
+           rdfs:subPropertyOf owl:topObjectProperty .
 
 
 
 ###  http://iflastandards.info/ns/fr/frbr/frbrer/P2032
 
-<http://iflastandards.info/ns/fr/frbr/frbrer/P2032> rdf:type owl:ObjectProperty ;
-                                                    
-                                                    rdfs:comment "http://iflastandards.info/ns/fr/frbr/frbrer/P2032" ;
-                                                    
-                                                    rdfs:subPropertyOf def:OP6005 .
+frbr:P2032 rdf:type owl:ObjectProperty ;
+           
+           rdfs:comment "http://iflastandards.info/ns/fr/frbr/frbrer/P2032" ;
+           
+           rdfs:subPropertyOf owl:topObjectProperty .
 
 
 
 ###  http://iflastandards.info/ns/fr/frbr/frbrer/P2033
 
-<http://iflastandards.info/ns/fr/frbr/frbrer/P2033> rdf:type owl:ObjectProperty ;
-                                                    
-                                                    rdfs:comment "http://iflastandards.info/ns/fr/frbr/frbrer/P2033" ;
-                                                    
-                                                    rdfs:subPropertyOf def:OP1008 .
+frbr:P2033 rdf:type owl:ObjectProperty ;
+           
+           rdfs:comment "http://iflastandards.info/ns/fr/frbr/frbrer/P2033" ;
+           
+           rdfs:subPropertyOf owl:topObjectProperty .
 
 
 
 ###  http://iflastandards.info/ns/fr/frbr/frbrer/P2034
 
-<http://iflastandards.info/ns/fr/frbr/frbrer/P2034> rdf:type owl:ObjectProperty ;
-                                                    
-                                                    rdfs:comment "http://iflastandards.info/ns/fr/frbr/frbrer/P2034" ;
-                                                    
-                                                    rdfs:subPropertyOf def:OP5003 .
+frbr:P2034 rdf:type owl:ObjectProperty ;
+           
+           rdfs:comment "http://iflastandards.info/ns/fr/frbr/frbrer/P2034" ;
+           
+           rdfs:subPropertyOf owl:topObjectProperty .
 
 
 
 ###  http://iflastandards.info/ns/fr/frbr/frbrer/P2035
 
-<http://iflastandards.info/ns/fr/frbr/frbrer/P2035> rdf:type owl:ObjectProperty ;
-                                                    
-                                                    rdfs:comment "http://iflastandards.info/ns/fr/frbr/frbrer/P2035" ;
-                                                    
-                                                    rdfs:subPropertyOf def:OP1006 .
+frbr:P2035 rdf:type owl:ObjectProperty ;
+           
+           rdfs:comment "http://iflastandards.info/ns/fr/frbr/frbrer/P2035" ;
+           
+           rdfs:subPropertyOf owl:topObjectProperty .
 
 
 
 ###  http://iflastandards.info/ns/fr/frbr/frbrer/P2036
 
-<http://iflastandards.info/ns/fr/frbr/frbrer/P2036> rdf:type owl:ObjectProperty ;
-                                                    
-                                                    rdfs:comment "http://iflastandards.info/ns/fr/frbr/frbrer/P2036" ;
-                                                    
-                                                    rdfs:subPropertyOf def:OP1007 .
+frbr:P2036 rdf:type owl:ObjectProperty ;
+           
+           rdfs:comment "http://iflastandards.info/ns/fr/frbr/frbrer/P2036" ;
+           
+           rdfs:subPropertyOf owl:topObjectProperty .
 
 
 
 ###  http://iflastandards.info/ns/fr/frbr/frbrer/P2037
 
-<http://iflastandards.info/ns/fr/frbr/frbrer/P2037> rdf:type owl:ObjectProperty ;
-                                                    
-                                                    rdfs:comment "http://iflastandards.info/ns/fr/frbr/frbrer/P2037" ;
-                                                    
-                                                    rdfs:subPropertyOf def:OP1009 .
+frbr:P2037 rdf:type owl:ObjectProperty ;
+           
+           rdfs:comment "http://iflastandards.info/ns/fr/frbr/frbrer/P2037" ;
+           
+           rdfs:subPropertyOf owl:topObjectProperty .
 
 
 
 ###  http://iflastandards.info/ns/fr/frbr/frbrer/P2038
 
-<http://iflastandards.info/ns/fr/frbr/frbrer/P2038> rdf:type owl:ObjectProperty ;
-                                                    
-                                                    rdfs:comment "http://iflastandards.info/ns/fr/frbr/frbrer/P2038" ;
-                                                    
-                                                    rdfs:subPropertyOf def:OP2005 .
+frbr:P2038 rdf:type owl:ObjectProperty ;
+           
+           rdfs:comment "http://iflastandards.info/ns/fr/frbr/frbrer/P2038" ;
+           
+           rdfs:subPropertyOf owl:topObjectProperty .
 
 
 
 ###  http://iflastandards.info/ns/fr/frbr/frbrer/P2057
 
-<http://iflastandards.info/ns/fr/frbr/frbrer/P2057> rdf:type owl:ObjectProperty ;
-                                                    
-                                                    rdfs:comment "http://iflastandards.info/ns/fr/frbr/frbrer/P2057" ;
-                                                    
-                                                    rdfs:subPropertyOf def:OP1003 .
+frbr:P2057 rdf:type owl:ObjectProperty ;
+           
+           rdfs:comment "http://iflastandards.info/ns/fr/frbr/frbrer/P2057" ;
+           
+           rdfs:subPropertyOf owl:topObjectProperty .
 
 
 
 ###  http://iflastandards.info/ns/fr/frbr/frbrer/P2058
 
-<http://iflastandards.info/ns/fr/frbr/frbrer/P2058> rdf:type owl:ObjectProperty ;
-                                                    
-                                                    rdfs:comment "http://iflastandards.info/ns/fr/frbr/frbrer/P2058" ;
-                                                    
-                                                    rdfs:subPropertyOf def:OP1004 .
+frbr:P2058 rdf:type owl:ObjectProperty ;
+           
+           rdfs:comment "http://iflastandards.info/ns/fr/frbr/frbrer/P2058" ;
+           
+           rdfs:subPropertyOf owl:topObjectProperty .
 
 
 
 ###  http://iflastandards.info/ns/fr/frbr/frbrer/P2079
 
-<http://iflastandards.info/ns/fr/frbr/frbrer/P2079> rdf:type owl:ObjectProperty ;
-                                                    
-                                                    rdfs:comment "http://iflastandards.info/ns/fr/frbr/frbrer/P2079" ;
-                                                    
-                                                    rdfs:subPropertyOf def:OP2003 .
+frbr:P2079 rdf:type owl:ObjectProperty ;
+           
+           rdfs:comment "http://iflastandards.info/ns/fr/frbr/frbrer/P2079" ;
+           
+           rdfs:subPropertyOf owl:topObjectProperty .
 
 
 
 ###  http://iflastandards.info/ns/fr/frbr/frbrer/P2080
 
-<http://iflastandards.info/ns/fr/frbr/frbrer/P2080> rdf:type owl:ObjectProperty ;
-                                                    
-                                                    rdfs:comment "http://iflastandards.info/ns/fr/frbr/frbrer/P2080" ;
-                                                    
-                                                    rdfs:subPropertyOf def:OP2004 .
+frbr:P2080 rdf:type owl:ObjectProperty ;
+           
+           rdfs:comment "http://iflastandards.info/ns/fr/frbr/frbrer/P2080" ;
+           
+           rdfs:subPropertyOf owl:topObjectProperty .
 
 
 
@@ -914,7 +966,7 @@ def:OP7001 rdf:type owl:ObjectProperty ;
                                               
                                               rdfs:comment "http://rdaregistry.info/Elements/rof/P10018" ;
                                               
-                                              rdfs:subPropertyOf def:OP3008 .
+                                              rdfs:subPropertyOf owl:topObjectProperty .
 
 
 
@@ -2512,726 +2564,726 @@ def:id rdf:type owl:DatatypeProperty ;
 
 
 
-###  http://datos.bne.es/def/http://iflastandards.info/ns/isbd/elements/P1149_http://iflastandards.info/ns/isbd/elements/P1149
-
-<http://datos.bne.es/def/http://iflastandards.info/ns/isbd/elements/P1149_http://iflastandards.info/ns/isbd/elements/P1149> rdf:type owl:DatatypeProperty ;
-                                                                                                                            
-                                                                                                                            rdfs:comment "http://iflastandards.info/ns/isbd/elements/P1149" ;
-                                                                                                                            
-                                                                                                                            rdfs:subPropertyOf def:P3053 .
-
-
-
 ###  http://iflastandards.info/ns/fr/frad/P3039
 
-<http://iflastandards.info/ns/fr/frad/P3039> rdf:type owl:DatatypeProperty ;
-                                             
-                                             rdfs:comment "http://iflastandards.info/ns/fr/frad/P3039" ;
-                                             
-                                             rdfs:subPropertyOf def:P5005 .
+frad:P3039 rdf:type owl:DatatypeProperty ;
+           
+           rdfs:comment "http://iflastandards.info/ns/fr/frad/P3039" ;
+           
+           rdfs:subPropertyOf def:P5005 .
 
 
 
 ###  http://iflastandards.info/ns/fr/frad/P4032
 
-<http://iflastandards.info/ns/fr/frad/P4032> rdf:type owl:DatatypeProperty ;
-                                             
-                                             rdfs:comment "http://iflastandards.info/ns/fr/frad/P4032" ;
-                                             
-                                             rdfs:subPropertyOf def:P6005 .
+frad:P4032 rdf:type owl:DatatypeProperty ;
+           
+           rdfs:comment "http://iflastandards.info/ns/fr/frad/P4032" ;
+           
+           rdfs:subPropertyOf def:P6005 .
 
 
 
 ###  http://iflastandards.info/ns/fr/frad/P4033
 
-<http://iflastandards.info/ns/fr/frad/P4033> rdf:type owl:DatatypeProperty ;
-                                             
-                                             rdfs:comment "http://iflastandards.info/ns/fr/frad/P4033" ;
-                                             
-                                             rdfs:subPropertyOf def:P1005 .
+frad:P4033 rdf:type owl:DatatypeProperty ;
+           
+           rdfs:comment "http://iflastandards.info/ns/fr/frad/P4033" ;
+           
+           rdfs:subPropertyOf def:P1005 .
 
 
 
 ###  http://iflastandards.info/ns/fr/frad/P4035
 
-<http://iflastandards.info/ns/fr/frad/P4035> rdf:type owl:DatatypeProperty ;
-                                             
-                                             rdfs:comment "http://iflastandards.info/ns/fr/frad/P4035" ;
-                                             
-                                             rdfs:subPropertyOf def:P5008 .
+frad:P4035 rdf:type owl:DatatypeProperty ;
+           
+           rdfs:comment "http://iflastandards.info/ns/fr/frad/P4035" ;
+           
+           rdfs:subPropertyOf def:P5008 .
 
 
 
 ###  http://iflastandards.info/ns/fr/frbr/frbrer/P3001
 
-<http://iflastandards.info/ns/fr/frbr/frbrer/P3001> rdf:type owl:DatatypeProperty ;
-                                                    
-                                                    rdfs:comment "http://iflastandards.info/ns/fr/frbr/frbrer/P3001" ;
-                                                    
-                                                    rdfs:subPropertyOf def:P1001 .
+frbr:P3001 rdf:type owl:DatatypeProperty ;
+           
+           rdfs:comment "http://iflastandards.info/ns/fr/frbr/frbrer/P3001" ;
+           
+           rdfs:subPropertyOf def:P1001 .
 
 
 
 ###  http://iflastandards.info/ns/fr/frbr/frbrer/P3003
 
-<http://iflastandards.info/ns/fr/frbr/frbrer/P3003> rdf:type owl:DatatypeProperty ;
-                                                    
-                                                    rdfs:comment "http://iflastandards.info/ns/fr/frbr/frbrer/P3003" ;
-                                                    
-                                                    rdfs:subPropertyOf def:P1004 .
+frbr:P3003 rdf:type owl:DatatypeProperty ;
+           
+           rdfs:comment "http://iflastandards.info/ns/fr/frbr/frbrer/P3003" ;
+           
+           rdfs:subPropertyOf def:P1004 .
 
 
 
 ###  http://iflastandards.info/ns/fr/frbr/frbrer/P3011
 
-<http://iflastandards.info/ns/fr/frbr/frbrer/P3011> rdf:type owl:DatatypeProperty ;
-                                                    
-                                                    rdfs:comment "http://iflastandards.info/ns/fr/frbr/frbrer/P3011" ;
-                                                    
-                                                    rdfs:subPropertyOf def:P2001 .
+frbr:P3011 rdf:type owl:DatatypeProperty ;
+           
+           rdfs:comment "http://iflastandards.info/ns/fr/frbr/frbrer/P3011" ;
+           
+           rdfs:subPropertyOf def:P2001 .
 
 
 
 ###  http://iflastandards.info/ns/fr/frbr/frbrer/P3012
 
-<http://iflastandards.info/ns/fr/frbr/frbrer/P3012> rdf:type owl:DatatypeProperty ;
-                                                    
-                                                    rdfs:comment "http://iflastandards.info/ns/fr/frbr/frbrer/P3012" ;
-                                                    
-                                                    rdfs:subPropertyOf def:P2002 .
+frbr:P3012 rdf:type owl:DatatypeProperty ;
+           
+           rdfs:comment "http://iflastandards.info/ns/fr/frbr/frbrer/P3012" ;
+           
+           rdfs:subPropertyOf def:P2002 .
 
 
 
 ###  http://iflastandards.info/ns/fr/frbr/frbrer/P3039
 
-<http://iflastandards.info/ns/fr/frbr/frbrer/P3039> rdf:type owl:DatatypeProperty ;
-                                                    
-                                                    rdfs:comment "http://iflastandards.info/ns/fr/frbr/frbrer/P3039" ;
-                                                    
-                                                    rdfs:subPropertyOf def:P5001 .
+frbr:P3039 rdf:type owl:DatatypeProperty ;
+           
+           rdfs:comment "http://iflastandards.info/ns/fr/frbr/frbrer/P3039" ;
+           
+           rdfs:subPropertyOf def:P5001 .
 
 
 
 ###  http://iflastandards.info/ns/fr/frbr/frbrer/P3040
 
-<http://iflastandards.info/ns/fr/frbr/frbrer/P3040> rdf:type owl:DatatypeProperty ;
-                                                    
-                                                    rdfs:comment "http://iflastandards.info/ns/fr/frbr/frbrer/P3040" ;
-                                                    
-                                                    rdfs:subPropertyOf def:P5002 .
+frbr:P3040 rdf:type owl:DatatypeProperty ;
+           
+           rdfs:comment "http://iflastandards.info/ns/fr/frbr/frbrer/P3040" ;
+           
+           rdfs:subPropertyOf def:P5002 .
 
 
 
 ###  http://iflastandards.info/ns/fr/frbr/frbrer/P3041
 
-<http://iflastandards.info/ns/fr/frbr/frbrer/P3041> rdf:type owl:DatatypeProperty ;
-                                                    
-                                                    rdfs:comment "http://iflastandards.info/ns/fr/frbr/frbrer/P3041" ;
-                                                    
-                                                    rdfs:subPropertyOf def:P5003 .
+frbr:P3041 rdf:type owl:DatatypeProperty ;
+           
+           rdfs:comment "http://iflastandards.info/ns/fr/frbr/frbrer/P3041" ;
+           
+           rdfs:subPropertyOf def:P5003 .
 
 
 
 ###  http://iflastandards.info/ns/fr/frbr/frbrer/P3042
 
-<http://iflastandards.info/ns/fr/frbr/frbrer/P3042> rdf:type owl:DatatypeProperty ;
-                                                    
-                                                    rdfs:comment "http://iflastandards.info/ns/fr/frbr/frbrer/P3042" ;
-                                                    
-                                                    rdfs:subPropertyOf def:P5007 .
+frbr:P3042 rdf:type owl:DatatypeProperty ;
+           
+           rdfs:comment "http://iflastandards.info/ns/fr/frbr/frbrer/P3042" ;
+           
+           rdfs:subPropertyOf def:P5007 .
 
 
 
 ###  http://iflastandards.info/ns/fr/frbr/frbrer/P3043
 
-<http://iflastandards.info/ns/fr/frbr/frbrer/P3043> rdf:type owl:DatatypeProperty ;
-                                                    
-                                                    rdfs:comment "http://iflastandards.info/ns/fr/frbr/frbrer/P3043" ;
-                                                    
-                                                    rdfs:subPropertyOf def:P6001 .
+frbr:P3043 rdf:type owl:DatatypeProperty ;
+           
+           rdfs:comment "http://iflastandards.info/ns/fr/frbr/frbrer/P3043" ;
+           
+           rdfs:subPropertyOf def:P6001 .
 
 
 
 ###  http://iflastandards.info/ns/fr/frbr/frbrer/P3044
 
-<http://iflastandards.info/ns/fr/frbr/frbrer/P3044> rdf:type owl:DatatypeProperty ;
-                                                    
-                                                    rdfs:comment "http://iflastandards.info/ns/fr/frbr/frbrer/P3044" ;
-                                                    
-                                                    rdfs:subPropertyOf def:P6006 .
+frbr:P3044 rdf:type owl:DatatypeProperty ;
+           
+           rdfs:comment "http://iflastandards.info/ns/fr/frbr/frbrer/P3044" ;
+           
+           rdfs:subPropertyOf def:P6006 .
 
 
 
 ###  http://iflastandards.info/ns/fr/frbr/frbrer/P3045
 
-<http://iflastandards.info/ns/fr/frbr/frbrer/P3045> rdf:type owl:DatatypeProperty ;
-                                                    
-                                                    rdfs:comment "http://iflastandards.info/ns/fr/frbr/frbrer/P3045" ;
-                                                    
-                                                    rdfs:subPropertyOf def:P6004 .
+frbr:P3045 rdf:type owl:DatatypeProperty ;
+           
+           rdfs:comment "http://iflastandards.info/ns/fr/frbr/frbrer/P3045" ;
+           
+           rdfs:subPropertyOf def:P6004 .
 
 
 
 ###  http://iflastandards.info/ns/fr/frbr/frbrer/P3046
 
-<http://iflastandards.info/ns/fr/frbr/frbrer/P3046> rdf:type owl:DatatypeProperty ;
-                                                    
-                                                    rdfs:comment "http://iflastandards.info/ns/fr/frbr/frbrer/P3046" ;
-                                                    
-                                                    rdfs:subPropertyOf def:P6003 .
+frbr:P3046 rdf:type owl:DatatypeProperty ;
+           
+           rdfs:comment "http://iflastandards.info/ns/fr/frbr/frbrer/P3046" ;
+           
+           rdfs:subPropertyOf def:P6003 .
 
 
 
 ###  http://iflastandards.info/ns/fr/frbr/frbrer/P3059
 
-<http://iflastandards.info/ns/fr/frbr/frbrer/P3059> rdf:type owl:DatatypeProperty ;
-                                                    
-                                                    rdfs:comment "http://iflastandards.info/ns/fr/frbr/frbrer/P3059" ;
-                                                    
-                                                    rdfs:subPropertyOf def:P1008 .
+frbr:P3059 rdf:type owl:DatatypeProperty ;
+           
+           rdfs:comment "http://iflastandards.info/ns/fr/frbr/frbrer/P3059" ;
+           
+           rdfs:subPropertyOf def:P1008 .
 
 
 
 ###  http://iflastandards.info/ns/fr/frbr/frbrer/P3061
 
-<http://iflastandards.info/ns/fr/frbr/frbrer/P3061> rdf:type owl:DatatypeProperty ;
-                                                    
-                                                    rdfs:comment "http://iflastandards.info/ns/fr/frbr/frbrer/P3061" ;
-                                                    
-                                                    rdfs:subPropertyOf def:P1009 .
+frbr:P3061 rdf:type owl:DatatypeProperty ;
+           
+           rdfs:comment "http://iflastandards.info/ns/fr/frbr/frbrer/P3061" ;
+           
+           rdfs:subPropertyOf def:P1009 .
 
 
 
 ###  http://iflastandards.info/ns/isbd/elements/P1001
 
-<http://iflastandards.info/ns/isbd/elements/P1001> rdf:type owl:DatatypeProperty ;
-                                                   
-                                                   rdfs:comment "http://iflastandards.info/ns/isbd/elements/P1001" ;
-                                                   
-                                                   rdfs:subPropertyOf def:P3061 .
+isbd:P1001 rdf:type owl:DatatypeProperty ;
+           
+           rdfs:comment "http://iflastandards.info/ns/isbd/elements/P1001" ;
+           
+           rdfs:subPropertyOf def:P3061 .
 
 
 
 ###  http://iflastandards.info/ns/isbd/elements/P1003
 
-<http://iflastandards.info/ns/isbd/elements/P1003> rdf:type owl:DatatypeProperty ;
-                                                   
-                                                   rdfs:comment "http://iflastandards.info/ns/isbd/elements/P1003" ;
-                                                   
-                                                   rdfs:subPropertyOf def:P3062 .
+isbd:P1003 rdf:type owl:DatatypeProperty ;
+           
+           rdfs:comment "http://iflastandards.info/ns/isbd/elements/P1003" ;
+           
+           rdfs:subPropertyOf def:P3062 .
 
 
 
 ###  http://iflastandards.info/ns/isbd/elements/P1004
 
-<http://iflastandards.info/ns/isbd/elements/P1004> rdf:type owl:DatatypeProperty ;
-                                                   
-                                                   rdfs:comment "http://iflastandards.info/ns/isbd/elements/P1004" ;
-                                                   
-                                                   rdfs:subPropertyOf def:P3002 .
+isbd:P1004 rdf:type owl:DatatypeProperty ;
+           
+           rdfs:comment "http://iflastandards.info/ns/isbd/elements/P1004" ;
+           
+           rdfs:subPropertyOf def:P3002 .
 
 
 
 ###  http://iflastandards.info/ns/isbd/elements/P1006
 
-<http://iflastandards.info/ns/isbd/elements/P1006> rdf:type owl:DatatypeProperty ;
-                                                   
-                                                   rdfs:comment "http://iflastandards.info/ns/isbd/elements/P1006" ;
-                                                   
-                                                   rdfs:subPropertyOf def:P3014 .
+isbd:P1006 rdf:type owl:DatatypeProperty ;
+           
+           rdfs:comment "http://iflastandards.info/ns/isbd/elements/P1006" ;
+           
+           rdfs:subPropertyOf def:P3014 .
 
 
 
 ###  http://iflastandards.info/ns/isbd/elements/P1007
 
-<http://iflastandards.info/ns/isbd/elements/P1007> rdf:type owl:DatatypeProperty ;
-                                                   
-                                                   rdfs:comment "http://iflastandards.info/ns/isbd/elements/P1007" ;
-                                                   
-                                                   rdfs:subPropertyOf def:P3008 .
+isbd:P1007 rdf:type owl:DatatypeProperty ;
+           
+           rdfs:comment "http://iflastandards.info/ns/isbd/elements/P1007" ;
+           
+           rdfs:subPropertyOf def:P3008 .
 
 
 
 ###  http://iflastandards.info/ns/isbd/elements/P1008
 
-<http://iflastandards.info/ns/isbd/elements/P1008> rdf:type owl:DatatypeProperty ;
-                                                   
-                                                   rdfs:comment "http://iflastandards.info/ns/isbd/elements/P1008" ;
-                                                   
-                                                   rdfs:subPropertyOf def:P3017 .
+isbd:P1008 rdf:type owl:DatatypeProperty ;
+           
+           rdfs:comment "http://iflastandards.info/ns/isbd/elements/P1008" ;
+           
+           rdfs:subPropertyOf def:P3017 .
 
 
 
 ###  http://iflastandards.info/ns/isbd/elements/P1010
 
-<http://iflastandards.info/ns/isbd/elements/P1010> rdf:type owl:DatatypeProperty ;
-                                                   
-                                                   rdfs:comment "http://iflastandards.info/ns/isbd/elements/P1010" ;
-                                                   
-                                                   rdfs:subPropertyOf def:P3050 .
+isbd:P1010 rdf:type owl:DatatypeProperty ;
+           
+           rdfs:comment "http://iflastandards.info/ns/isbd/elements/P1010" ;
+           
+           rdfs:subPropertyOf def:P3050 .
 
 
 
 ###  http://iflastandards.info/ns/isbd/elements/P1014
 
-<http://iflastandards.info/ns/isbd/elements/P1014> rdf:type owl:DatatypeProperty ;
-                                                   
-                                                   rdfs:comment "http://iflastandards.info/ns/isbd/elements/P1014" ;
-                                                   
-                                                   rdfs:subPropertyOf def:P3051 .
+isbd:P1014 rdf:type owl:DatatypeProperty ;
+           
+           rdfs:comment "http://iflastandards.info/ns/isbd/elements/P1014" ;
+           
+           rdfs:subPropertyOf def:P3051 .
 
 
 
 ###  http://iflastandards.info/ns/isbd/elements/P1016
 
-<http://iflastandards.info/ns/isbd/elements/P1016> rdf:type owl:DatatypeProperty ;
-                                                   
-                                                   rdfs:comment "http://iflastandards.info/ns/isbd/elements/P1016" ;
-                                                   
-                                                   rdfs:subPropertyOf def:P3003 .
+isbd:P1016 rdf:type owl:DatatypeProperty ;
+           
+           rdfs:comment "http://iflastandards.info/ns/isbd/elements/P1016" ;
+           
+           rdfs:subPropertyOf def:P3003 .
 
 
 
 ###  http://iflastandards.info/ns/isbd/elements/P1017
 
-<http://iflastandards.info/ns/isbd/elements/P1017> rdf:type owl:DatatypeProperty ;
-                                                   
-                                                   rdfs:comment "http://iflastandards.info/ns/isbd/elements/P1017" ;
-                                                   
-                                                   rdfs:subPropertyOf def:P3001 .
+isbd:P1017 rdf:type owl:DatatypeProperty ;
+           
+           rdfs:comment "http://iflastandards.info/ns/isbd/elements/P1017" ;
+           
+           rdfs:subPropertyOf def:P3001 .
 
 
 
 ###  http://iflastandards.info/ns/isbd/elements/P1018
 
-<http://iflastandards.info/ns/isbd/elements/P1018> rdf:type owl:DatatypeProperty ;
-                                                   
-                                                   rdfs:comment "http://iflastandards.info/ns/isbd/elements/P1018" ;
-                                                   
-                                                   rdfs:subPropertyOf def:P3006 .
+isbd:P1018 rdf:type owl:DatatypeProperty ;
+           
+           rdfs:comment "http://iflastandards.info/ns/isbd/elements/P1018" ;
+           
+           rdfs:subPropertyOf def:P3006 .
 
 
 
 ###  http://iflastandards.info/ns/isbd/elements/P1019
 
-<http://iflastandards.info/ns/isbd/elements/P1019> rdf:type owl:DatatypeProperty ;
-                                                   
-                                                   rdfs:comment "http://iflastandards.info/ns/isbd/elements/P1019" ;
-                                                   
-                                                   rdfs:subPropertyOf def:P3027 .
+isbd:P1019 rdf:type owl:DatatypeProperty ;
+           
+           rdfs:comment "http://iflastandards.info/ns/isbd/elements/P1019" ;
+           
+           rdfs:subPropertyOf def:P3027 .
 
 
 
 ###  http://iflastandards.info/ns/isbd/elements/P1020
 
-<http://iflastandards.info/ns/isbd/elements/P1020> rdf:type owl:DatatypeProperty ;
-                                                   
-                                                   rdfs:comment "http://iflastandards.info/ns/isbd/elements/P1020" ;
-                                                   
-                                                   rdfs:subPropertyOf def:P3019 .
+isbd:P1020 rdf:type owl:DatatypeProperty ;
+           
+           rdfs:comment "http://iflastandards.info/ns/isbd/elements/P1020" ;
+           
+           rdfs:subPropertyOf def:P3019 .
 
 
 
 ###  http://iflastandards.info/ns/isbd/elements/P1021
 
-<http://iflastandards.info/ns/isbd/elements/P1021> rdf:type owl:DatatypeProperty ;
-                                                   
-                                                   rdfs:comment "http://iflastandards.info/ns/isbd/elements/P1021" ;
-                                                   
-                                                   rdfs:subPropertyOf def:P3048 .
+isbd:P1021 rdf:type owl:DatatypeProperty ;
+           
+           rdfs:comment "http://iflastandards.info/ns/isbd/elements/P1021" ;
+           
+           rdfs:subPropertyOf def:P3048 .
 
 
 
 ###  http://iflastandards.info/ns/isbd/elements/P1022
 
-<http://iflastandards.info/ns/isbd/elements/P1022> rdf:type owl:DatatypeProperty ;
-                                                   
-                                                   rdfs:comment "http://iflastandards.info/ns/isbd/elements/P1022" ;
-                                                   
-                                                   rdfs:subPropertyOf def:P3004 .
+isbd:P1022 rdf:type owl:DatatypeProperty ;
+           
+           rdfs:comment "http://iflastandards.info/ns/isbd/elements/P1022" ;
+           
+           rdfs:subPropertyOf def:P3004 .
 
 
 
 ###  http://iflastandards.info/ns/isbd/elements/P1023
 
-<http://iflastandards.info/ns/isbd/elements/P1023> rdf:type owl:DatatypeProperty ;
-                                                   
-                                                   rdfs:comment "http://iflastandards.info/ns/isbd/elements/P1023" ;
-                                                   
-                                                   rdfs:subPropertyOf def:P3012 .
+isbd:P1023 rdf:type owl:DatatypeProperty ;
+           
+           rdfs:comment "http://iflastandards.info/ns/isbd/elements/P1023" ;
+           
+           rdfs:subPropertyOf def:P3012 .
 
 
 
 ###  http://iflastandards.info/ns/isbd/elements/P1024
 
-<http://iflastandards.info/ns/isbd/elements/P1024> rdf:type owl:DatatypeProperty ;
-                                                   
-                                                   rdfs:comment "http://iflastandards.info/ns/isbd/elements/P1024" ;
-                                                   
-                                                   rdfs:subPropertyOf def:P3007 .
+isbd:P1024 rdf:type owl:DatatypeProperty ;
+           
+           rdfs:comment "http://iflastandards.info/ns/isbd/elements/P1024" ;
+           
+           rdfs:subPropertyOf def:P3007 .
 
 
 
 ###  http://iflastandards.info/ns/isbd/elements/P1025
 
-<http://iflastandards.info/ns/isbd/elements/P1025> rdf:type owl:DatatypeProperty ;
-                                                   
-                                                   rdfs:comment "http://iflastandards.info/ns/isbd/elements/P1025" ;
-                                                   
-                                                   rdfs:subPropertyOf def:P3029 .
+isbd:P1025 rdf:type owl:DatatypeProperty ;
+           
+           rdfs:comment "http://iflastandards.info/ns/isbd/elements/P1025" ;
+           
+           rdfs:subPropertyOf def:P3029 .
 
 
 
 ###  http://iflastandards.info/ns/isbd/elements/P1026
 
-<http://iflastandards.info/ns/isbd/elements/P1026> rdf:type owl:DatatypeProperty ;
-                                                   
-                                                   rdfs:comment "http://iflastandards.info/ns/isbd/elements/P1026" ;
-                                                   
-                                                   rdfs:subPropertyOf def:P3016 .
+isbd:P1026 rdf:type owl:DatatypeProperty ;
+           
+           rdfs:comment "http://iflastandards.info/ns/isbd/elements/P1026" ;
+           
+           rdfs:subPropertyOf def:P3016 .
 
 
 
 ###  http://iflastandards.info/ns/isbd/elements/P1030
 
-<http://iflastandards.info/ns/isbd/elements/P1030> rdf:type owl:DatatypeProperty ;
-                                                   
-                                                   rdfs:comment "http://iflastandards.info/ns/isbd/elements/P1030" ;
-                                                   
-                                                   rdfs:subPropertyOf def:P3049 .
+isbd:P1030 rdf:type owl:DatatypeProperty ;
+           
+           rdfs:comment "http://iflastandards.info/ns/isbd/elements/P1030" ;
+           
+           rdfs:subPropertyOf def:P3049 .
 
 
 
 ###  http://iflastandards.info/ns/isbd/elements/P1031
 
-<http://iflastandards.info/ns/isbd/elements/P1031> rdf:type owl:DatatypeProperty ;
-                                                   
-                                                   rdfs:comment "http://iflastandards.info/ns/isbd/elements/P1031" ;
-                                                   
-                                                   rdfs:subPropertyOf def:P3018 .
+isbd:P1031 rdf:type owl:DatatypeProperty ;
+           
+           rdfs:comment "http://iflastandards.info/ns/isbd/elements/P1031" ;
+           
+           rdfs:subPropertyOf def:P3018 .
 
 
 
 ###  http://iflastandards.info/ns/isbd/elements/P1034
 
-<http://iflastandards.info/ns/isbd/elements/P1034> rdf:type owl:DatatypeProperty ;
-                                                   
-                                                   rdfs:comment "http://iflastandards.info/ns/isbd/elements/P1034" ;
-                                                   
-                                                   rdfs:subPropertyOf def:P3038 .
+isbd:P1034 rdf:type owl:DatatypeProperty ;
+           
+           rdfs:comment "http://iflastandards.info/ns/isbd/elements/P1034" ;
+           
+           rdfs:subPropertyOf def:P3038 .
 
 
 
 ###  http://iflastandards.info/ns/isbd/elements/P1037
 
-<http://iflastandards.info/ns/isbd/elements/P1037> rdf:type owl:DatatypeProperty ;
-                                                   
-                                                   rdfs:comment "http://iflastandards.info/ns/isbd/elements/P1037" ;
-                                                   
-                                                   rdfs:subPropertyOf def:P3043 .
+isbd:P1037 rdf:type owl:DatatypeProperty ;
+           
+           rdfs:comment "http://iflastandards.info/ns/isbd/elements/P1037" ;
+           
+           rdfs:subPropertyOf def:P3043 .
 
 
 
 ###  http://iflastandards.info/ns/isbd/elements/P1038
 
-<http://iflastandards.info/ns/isbd/elements/P1038> rdf:type owl:DatatypeProperty ;
-                                                   
-                                                   rdfs:comment "http://iflastandards.info/ns/isbd/elements/P1038" ;
-                                                   
-                                                   rdfs:subPropertyOf def:P3042 .
+isbd:P1038 rdf:type owl:DatatypeProperty ;
+           
+           rdfs:comment "http://iflastandards.info/ns/isbd/elements/P1038" ;
+           
+           rdfs:subPropertyOf def:P3042 .
 
 
 
 ###  http://iflastandards.info/ns/isbd/elements/P1039
 
-<http://iflastandards.info/ns/isbd/elements/P1039> rdf:type owl:DatatypeProperty ;
-                                                   
-                                                   rdfs:comment "http://iflastandards.info/ns/isbd/elements/P1039" ;
-                                                   
-                                                   rdfs:subPropertyOf def:P3026 .
+isbd:P1039 rdf:type owl:DatatypeProperty ;
+           
+           rdfs:comment "http://iflastandards.info/ns/isbd/elements/P1039" ;
+           
+           rdfs:subPropertyOf def:P3026 .
 
 
 
 ###  http://iflastandards.info/ns/isbd/elements/P1040
 
-<http://iflastandards.info/ns/isbd/elements/P1040> rdf:type owl:DatatypeProperty ;
-                                                   
-                                                   rdfs:comment "http://iflastandards.info/ns/isbd/elements/P1040" ;
-                                                   
-                                                   rdfs:subPropertyOf def:P3021 .
+isbd:P1040 rdf:type owl:DatatypeProperty ;
+           
+           rdfs:comment "http://iflastandards.info/ns/isbd/elements/P1040" ;
+           
+           rdfs:subPropertyOf def:P3021 .
 
 
 
 ###  http://iflastandards.info/ns/isbd/elements/P1041
 
-<http://iflastandards.info/ns/isbd/elements/P1041> rdf:type owl:DatatypeProperty ;
-                                                   
-                                                   rdfs:comment "http://iflastandards.info/ns/isbd/elements/P1041" ;
-                                                   
-                                                   rdfs:subPropertyOf def:P3052 .
+isbd:P1041 rdf:type owl:DatatypeProperty ;
+           
+           rdfs:comment "http://iflastandards.info/ns/isbd/elements/P1041" ;
+           
+           rdfs:subPropertyOf def:P3052 .
 
 
 
 ###  http://iflastandards.info/ns/isbd/elements/P1042
 
-<http://iflastandards.info/ns/isbd/elements/P1042> rdf:type owl:DatatypeProperty ;
-                                                   
-                                                   rdfs:comment "http://iflastandards.info/ns/isbd/elements/P1042" ;
-                                                   
-                                                   rdfs:subPropertyOf def:P3023 .
+isbd:P1042 rdf:type owl:DatatypeProperty ;
+           
+           rdfs:comment "http://iflastandards.info/ns/isbd/elements/P1042" ;
+           
+           rdfs:subPropertyOf def:P3023 .
 
 
 
 ###  http://iflastandards.info/ns/isbd/elements/P1044
 
-<http://iflastandards.info/ns/isbd/elements/P1044> rdf:type owl:DatatypeProperty ;
-                                                   
-                                                   rdfs:comment "http://iflastandards.info/ns/isbd/elements/P1044" ;
-                                                   
-                                                   rdfs:subPropertyOf def:P3037 .
+isbd:P1044 rdf:type owl:DatatypeProperty ;
+           
+           rdfs:comment "http://iflastandards.info/ns/isbd/elements/P1044" ;
+           
+           rdfs:subPropertyOf def:P3037 .
 
 
 
 ###  http://iflastandards.info/ns/isbd/elements/P1045
 
-<http://iflastandards.info/ns/isbd/elements/P1045> rdf:type owl:DatatypeProperty ;
-                                                   
-                                                   rdfs:comment "http://iflastandards.info/ns/isbd/elements/P1045" ;
-                                                   
-                                                   rdfs:subPropertyOf def:P3015 ,
-                                                                      def:P3065 ,
-                                                                      def:P6008 ,
-                                                                      <http://iflastandards.info/ns/isbd/elements/P1045> .
+isbd:P1045 rdf:type owl:DatatypeProperty ;
+           
+           rdfs:comment "http://iflastandards.info/ns/isbd/elements/P1045" ;
+           
+           rdfs:subPropertyOf def:P3015 ,
+                              def:P3065 ,
+                              def:P6008 ,
+                              isbd:P1045 .
 
 
 
 ###  http://iflastandards.info/ns/isbd/elements/P1047
 
-<http://iflastandards.info/ns/isbd/elements/P1047> rdf:type owl:DatatypeProperty ;
-                                                   
-                                                   rdfs:comment "http://iflastandards.info/ns/isbd/elements/P1047" ;
-                                                   
-                                                   rdfs:subPropertyOf def:P3035 .
+isbd:P1047 rdf:type owl:DatatypeProperty ;
+           
+           rdfs:comment "http://iflastandards.info/ns/isbd/elements/P1047" ;
+           
+           rdfs:subPropertyOf def:P3035 .
 
 
 
 ###  http://iflastandards.info/ns/isbd/elements/P1050
 
-<http://iflastandards.info/ns/isbd/elements/P1050> rdf:type owl:DatatypeProperty ;
-                                                   
-                                                   rdfs:comment "http://iflastandards.info/ns/isbd/elements/P1050" ;
-                                                   
-                                                   rdfs:subPropertyOf def:P3056 .
+isbd:P1050 rdf:type owl:DatatypeProperty ;
+           
+           rdfs:comment "http://iflastandards.info/ns/isbd/elements/P1050" ;
+           
+           rdfs:subPropertyOf def:P3056 .
 
 
 
 ###  http://iflastandards.info/ns/isbd/elements/P1051
 
-<http://iflastandards.info/ns/isbd/elements/P1051> rdf:type owl:DatatypeProperty ;
-                                                   
-                                                   rdfs:comment "http://iflastandards.info/ns/isbd/elements/P1051" ;
-                                                   
-                                                   rdfs:subPropertyOf def:P3063 .
+isbd:P1051 rdf:type owl:DatatypeProperty ;
+           
+           rdfs:comment "http://iflastandards.info/ns/isbd/elements/P1051" ;
+           
+           rdfs:subPropertyOf def:P3063 .
 
 
 
 ###  http://iflastandards.info/ns/isbd/elements/P1064
 
-<http://iflastandards.info/ns/isbd/elements/P1064> rdf:type owl:DatatypeProperty ;
-                                                   
-                                                   rdfs:comment "http://iflastandards.info/ns/isbd/elements/P1064" ;
-                                                   
-                                                   rdfs:subPropertyOf def:P3025 .
+isbd:P1064 rdf:type owl:DatatypeProperty ;
+           
+           rdfs:comment "http://iflastandards.info/ns/isbd/elements/P1064" ;
+           
+           rdfs:subPropertyOf def:P3025 .
 
 
 
 ###  http://iflastandards.info/ns/isbd/elements/P1065
 
-<http://iflastandards.info/ns/isbd/elements/P1065> rdf:type owl:DatatypeProperty ;
-                                                   
-                                                   rdfs:comment "http://iflastandards.info/ns/isbd/elements/P1065" ;
-                                                   
-                                                   rdfs:subPropertyOf def:P3032 .
+isbd:P1065 rdf:type owl:DatatypeProperty ;
+           
+           rdfs:comment "http://iflastandards.info/ns/isbd/elements/P1065" ;
+           
+           rdfs:subPropertyOf def:P3032 .
 
 
 
 ###  http://iflastandards.info/ns/isbd/elements/P1066
 
-<http://iflastandards.info/ns/isbd/elements/P1066> rdf:type owl:DatatypeProperty ;
-                                                   
-                                                   rdfs:comment "http://iflastandards.info/ns/isbd/elements/P1066" ;
-                                                   
-                                                   rdfs:subPropertyOf def:P3044 .
+isbd:P1066 rdf:type owl:DatatypeProperty ;
+           
+           rdfs:comment "http://iflastandards.info/ns/isbd/elements/P1066" ;
+           
+           rdfs:subPropertyOf def:P3044 .
 
 
 
 ###  http://iflastandards.info/ns/isbd/elements/P1067
 
-<http://iflastandards.info/ns/isbd/elements/P1067> rdf:type owl:DatatypeProperty ;
-                                                   
-                                                   rdfs:comment "http://iflastandards.info/ns/isbd/elements/P1067" ;
-                                                   
-                                                   rdfs:subPropertyOf def:P3058 .
+isbd:P1067 rdf:type owl:DatatypeProperty ;
+           
+           rdfs:comment "http://iflastandards.info/ns/isbd/elements/P1067" ;
+           
+           rdfs:subPropertyOf def:P3058 .
 
 
 
 ###  http://iflastandards.info/ns/isbd/elements/P1073
 
-<http://iflastandards.info/ns/isbd/elements/P1073> rdf:type owl:DatatypeProperty ;
-                                                   
-                                                   rdfs:comment "http://iflastandards.info/ns/isbd/elements/P1073" ;
-                                                   
-                                                   rdfs:subPropertyOf def:P3040 .
+isbd:P1073 rdf:type owl:DatatypeProperty ;
+           
+           rdfs:comment "http://iflastandards.info/ns/isbd/elements/P1073" ;
+           
+           rdfs:subPropertyOf def:P3040 .
 
 
 
 ###  http://iflastandards.info/ns/isbd/elements/P1075
 
-<http://iflastandards.info/ns/isbd/elements/P1075> rdf:type owl:DatatypeProperty ;
-                                                   
-                                                   rdfs:comment "http://iflastandards.info/ns/isbd/elements/P1075" ;
-                                                   
-                                                   rdfs:subPropertyOf def:P3059 .
+isbd:P1075 rdf:type owl:DatatypeProperty ;
+           
+           rdfs:comment "http://iflastandards.info/ns/isbd/elements/P1075" ;
+           
+           rdfs:subPropertyOf def:P3059 .
 
 
 
 ###  http://iflastandards.info/ns/isbd/elements/P1078
 
-<http://iflastandards.info/ns/isbd/elements/P1078> rdf:type owl:DatatypeProperty ;
-                                                   
-                                                   rdfs:comment "http://iflastandards.info/ns/isbd/elements/P1078" ;
-                                                   
-                                                   rdfs:subPropertyOf def:P3060 .
+isbd:P1078 rdf:type owl:DatatypeProperty ;
+           
+           rdfs:comment "http://iflastandards.info/ns/isbd/elements/P1078" ;
+           
+           rdfs:subPropertyOf def:P3060 .
 
 
 
 ###  http://iflastandards.info/ns/isbd/elements/P1091
 
-<http://iflastandards.info/ns/isbd/elements/P1091> rdf:type owl:DatatypeProperty ;
-                                                   
-                                                   rdfs:comment "http://iflastandards.info/ns/isbd/elements/P1091" ;
-                                                   
-                                                   rdfs:subPropertyOf def:P3036 .
+isbd:P1091 rdf:type owl:DatatypeProperty ;
+           
+           rdfs:comment "http://iflastandards.info/ns/isbd/elements/P1091" ;
+           
+           rdfs:subPropertyOf def:P3036 .
 
 
 
 ###  http://iflastandards.info/ns/isbd/elements/P1098
 
-<http://iflastandards.info/ns/isbd/elements/P1098> rdf:type owl:DatatypeProperty ;
-                                                   
-                                                   rdfs:comment "http://iflastandards.info/ns/isbd/elements/P1098" ;
-                                                   
-                                                   rdfs:subPropertyOf def:P3047 .
+isbd:P1098 rdf:type owl:DatatypeProperty ;
+           
+           rdfs:comment "http://iflastandards.info/ns/isbd/elements/P1098" ;
+           
+           rdfs:subPropertyOf def:P3047 .
 
 
 
 ###  http://iflastandards.info/ns/isbd/elements/P1099
 
-<http://iflastandards.info/ns/isbd/elements/P1099> rdf:type owl:DatatypeProperty ;
-                                                   
-                                                   rdfs:comment "http://iflastandards.info/ns/isbd/elements/P1099" ;
-                                                   
-                                                   rdfs:subPropertyOf def:P3034 .
+isbd:P1099 rdf:type owl:DatatypeProperty ;
+           
+           rdfs:comment "http://iflastandards.info/ns/isbd/elements/P1099" ;
+           
+           rdfs:subPropertyOf def:P3034 .
 
 
 
 ###  http://iflastandards.info/ns/isbd/elements/P1100
 
-<http://iflastandards.info/ns/isbd/elements/P1100> rdf:type owl:DatatypeProperty ;
-                                                   
-                                                   rdfs:comment "http://iflastandards.info/ns/isbd/elements/P1100" ;
-                                                   
-                                                   rdfs:subPropertyOf def:P3055 .
+isbd:P1100 rdf:type owl:DatatypeProperty ;
+           
+           rdfs:comment "http://iflastandards.info/ns/isbd/elements/P1100" ;
+           
+           rdfs:subPropertyOf def:P3055 .
 
 
 
 ###  http://iflastandards.info/ns/isbd/elements/P1101
 
-<http://iflastandards.info/ns/isbd/elements/P1101> rdf:type owl:DatatypeProperty ;
-                                                   
-                                                   rdfs:comment "http://iflastandards.info/ns/isbd/elements/P1101" ;
-                                                   
-                                                   rdfs:subPropertyOf def:P3046 .
+isbd:P1101 rdf:type owl:DatatypeProperty ;
+           
+           rdfs:comment "http://iflastandards.info/ns/isbd/elements/P1101" ;
+           
+           rdfs:subPropertyOf def:P3046 .
 
 
 
 ###  http://iflastandards.info/ns/isbd/elements/P1123
 
-<http://iflastandards.info/ns/isbd/elements/P1123> rdf:type owl:DatatypeProperty ;
-                                                   
-                                                   rdfs:comment "http://iflastandards.info/ns/isbd/elements/P1123" ;
-                                                   
-                                                   rdfs:subPropertyOf def:P3054 .
+isbd:P1123 rdf:type owl:DatatypeProperty ;
+           
+           rdfs:comment "http://iflastandards.info/ns/isbd/elements/P1123" ;
+           
+           rdfs:subPropertyOf def:P3054 .
 
 
 
 ###  http://iflastandards.info/ns/isbd/elements/P1138
 
-<http://iflastandards.info/ns/isbd/elements/P1138> rdf:type owl:DatatypeProperty ;
-                                                   
-                                                   rdfs:comment "http://iflastandards.info/ns/isbd/elements/P1138" ;
-                                                   
-                                                   rdfs:subPropertyOf def:P3030 .
+isbd:P1138 rdf:type owl:DatatypeProperty ;
+           
+           rdfs:comment "http://iflastandards.info/ns/isbd/elements/P1138" ;
+           
+           rdfs:subPropertyOf def:P3030 .
 
 
 
 ###  http://iflastandards.info/ns/isbd/elements/P1139
 
-<http://iflastandards.info/ns/isbd/elements/P1139> rdf:type owl:DatatypeProperty ;
-                                                   
-                                                   rdfs:comment "http://iflastandards.info/ns/isbd/elements/P1139" ;
-                                                   
-                                                   rdfs:subPropertyOf def:P3033 .
+isbd:P1139 rdf:type owl:DatatypeProperty ;
+           
+           rdfs:comment "http://iflastandards.info/ns/isbd/elements/P1139" ;
+           
+           rdfs:subPropertyOf def:P3033 .
 
 
 
 ###  http://iflastandards.info/ns/isbd/elements/P1148
 
-<http://iflastandards.info/ns/isbd/elements/P1148> rdf:type owl:DatatypeProperty ;
-                                                   
-                                                   rdfs:comment "http://iflastandards.info/ns/isbd/elements/P1148" ;
-                                                   
-                                                   rdfs:subPropertyOf def:P3045 .
+isbd:P1148 rdf:type owl:DatatypeProperty ;
+           
+           rdfs:comment "http://iflastandards.info/ns/isbd/elements/P1148" ;
+           
+           rdfs:subPropertyOf def:P3045 .
+
+
+
+###  http://iflastandards.info/ns/isbd/elements/P1149
+
+isbd:P1149 rdf:type owl:DatatypeProperty ;
+           
+           rdfs:comment "http://iflastandards.info/ns/isbd/elements/P1149" ;
+           
+           rdfs:subPropertyOf def:P3053 .
 
 
 
 ###  http://iflastandards.info/ns/isbd/elements/P1154
 
-<http://iflastandards.info/ns/isbd/elements/P1154> rdf:type owl:DatatypeProperty ;
-                                                   
-                                                   rdfs:comment "http://iflastandards.info/ns/isbd/elements/P1154" ;
-                                                   
-                                                   rdfs:subPropertyOf def:P3041 .
+isbd:P1154 rdf:type owl:DatatypeProperty ;
+           
+           rdfs:comment "http://iflastandards.info/ns/isbd/elements/P1154" ;
+           
+           rdfs:subPropertyOf def:P3041 .
 
 
 
 ###  http://iflastandards.info/ns/isbd/elements/P1155
 
-<http://iflastandards.info/ns/isbd/elements/P1155> rdf:type owl:DatatypeProperty ;
-                                                   
-                                                   rdfs:comment "http://iflastandards.info/ns/isbd/elements/P1155" ;
-                                                   
-                                                   rdfs:subPropertyOf def:P3057 .
+isbd:P1155 rdf:type owl:DatatypeProperty ;
+           
+           rdfs:comment "http://iflastandards.info/ns/isbd/elements/P1155" ;
+           
+           rdfs:subPropertyOf def:P3057 .
 
 
 
 ###  http://iflastandards.info/ns/isbd/elements/P1156
 
-<http://iflastandards.info/ns/isbd/elements/P1156> rdf:type owl:DatatypeProperty ;
-                                                   
-                                                   rdfs:comment "http://iflastandards.info/ns/isbd/elements/P1156" ;
-                                                   
-                                                   rdfs:subPropertyOf def:P3031 .
+isbd:P1156 rdf:type owl:DatatypeProperty ;
+           
+           rdfs:comment "http://iflastandards.info/ns/isbd/elements/P1156" ;
+           
+           rdfs:subPropertyOf def:P3031 .
 
 
 
 ###  http://iflastandards.info/ns/isbd/elements/P1185
 
-<http://iflastandards.info/ns/isbd/elements/P1185> rdf:type owl:DatatypeProperty ;
-                                                   
-                                                   rdfs:comment "http://iflastandards.info/ns/isbd/elements/P1185" ;
-                                                   
-                                                   rdfs:subPropertyOf def:P3005 .
+isbd:P1185 rdf:type owl:DatatypeProperty ;
+           
+           rdfs:comment "http://iflastandards.info/ns/isbd/elements/P1185" ;
+           
+           rdfs:subPropertyOf def:P3005 .
 
 
 
@@ -3442,12 +3494,17 @@ def:C1001 rdf:type owl:Class ;
                      """Obra
 """@es ;
           
+          rdfs:subClassOf frbr:C1001 ;
+          
           rdfs:isDefinedBy "" ;
           
           rdfs:comment "A work is an abstract entity; there is no single material object one can point to as the work. We recognize the work through individual realizations or expressions of the work, but the work itself exists only in the commonality of content between and among the various expressions of the work. Because the notion of a work is abstract, it is difficult to define precise boundaries for the entity. The concept of what constitutes a work and where the line of demarcation lies between one work and another may in fact be viewed differently from one culture to another. Consequently the bibliographic conventions established by various cultures or national groups may differ in terms of the criteria they use for determining the boundaries between one work and another. For the purposes of this model variant texts incorporating revisions or updates to an earlier text are viewed simply as expressions of the same work (i.e., the variant texts are not viewed as separate works). Similarly, abridgements or enlargements of an existing text, or the addition of parts or an accompaniment to a musical composition are considered to be different expressions of the same work. Translations from one language to another, musical transcriptions and arrangements, and dubbed or subtitled versions of a film are also considered simply as different expressions of the same original work. By contrast, when the modification of a work involves a significant degree of independent intellectual or artistic effort, the result is viewed, for the purpose of this model, as a new work. Thus paraphrases, rewritings, adaptations for children, parodies, musical variations on a theme and free transcriptions of a musical composition are considered to represent new works. Similarly, adaptations of a work from one literary or art form to another (e.g., dramatizations, adaptations from one medium of the graphic arts to another, etc.) are considered to represent new works. Abstracts, digests and summaries are also considered to represent new works. [Source: http://iflastandards.info/ns/fr/frbr/frbrer/C1001]"@en ;
           
-          def:label "Work"@en ,
-                    "Obra"@es .
+          def:label "Obra"@es ;
+          
+          rdfs:comment "http://iflastandards.info/ns/fr/frbr/frbrer/C1001" ;
+          
+          def:label "Work"@en .
 
 
 
@@ -3458,12 +3515,16 @@ def:C1002 rdf:type owl:Class ;
           rdfs:label "Expression"@en ,
                      "Expresión"@es ;
           
+          rdfs:subClassOf frbr:C1002 ;
+          
           rdfs:comment "An expression is the specific intellectual or artistic form that a work takes each time it is \"realized\". Expression encompasses, for example, the specific words, sentences, paragraphs, etc. that result from the realization of a work in the form of a text, or the particular sounds, phrasing, etc. resulting from the realization of a musical work. The boundaries of the entity expression are defined, however, so as to exclude aspects of physical form, such as typeface and page layout, that are not integral to the intellectual or artistic realization of the work as such. Inasmuch as the form of expression is an inherent characteristic of the expression, any change in form (e.g., from alpha-numeric notation to spoken word) results in a new expression. Similarly, changes in the intellectual conventions or instruments that are employed to express a work (e.g., translation from one language to another) result in the production of a new expression. If a text is revised or modified, the resulting expression is considered to be a new expression. The degree to which bibliographic distinctions are made between variant expressions of a work will depend to some extent on the nature of the work itself, on the anticipated needs of users and on what the cataloguer can reasonably be expected to recognize from the manifestation being described. Differences in form of expression (e.g., the differences between the expression of a work in the form of musical notation and the expression of the same work in the form of recorded sound) will normally be reflected in the bibliographic record, no matter what the nature of the work itself may be. Variant expressions in the same form (e.g., revised versions of a text) will often be indirectly identified as different expressions because the variation is apparent from the data associated with an attribute used to identify the manifestation in which the expression is embodied (e.g., an edition statement). Variations that would be evident only from a more detailed analysis and comparison of expressions (e.g., variations between several of the early texts of Shakespeare's Hamlet) would normally be reflected in the data only if the nature or stature of the work warranted such analysis, and only if it was anticipated that the distinction would be important to users. [Source: http://iflastandards.info/ns/fr/frbr/frbrer/C1002]"@en ;
           
           def:label "Version"@en ,
                     "Versión"@es ;
           
-          rdfs:isDefinedBy "http://datos.bne.es/def/" .
+          rdfs:isDefinedBy "http://datos.bne.es/def/" ;
+          
+          rdfs:comment "http://iflastandards.info/ns/fr/frbr/frbrer/C1002" .
 
 
 
@@ -3473,6 +3534,10 @@ def:C1003 rdf:type owl:Class ;
           
           rdfs:label "Manifestation"@en ,
                      "Manifestación"@es ;
+          
+          rdfs:subClassOf frbr:C1003 ;
+          
+          rdfs:comment "http://iflastandards.info/ns/fr/frbr/frbrer/C1003" ;
           
           def:label "Edition"@en ;
           
@@ -3491,13 +3556,17 @@ def:C1004 rdf:type owl:Class ;
           rdfs:label "Item"@en ,
                      "Ejemplar"@es ;
           
+          rdfs:subClassOf frbr:C1004 ;
+          
           def:label "Item"@en ;
           
           rdfs:comment "The entity defined as item is a concrete entity. It is in many instances a single physical object (e.g., a copy of a one-volume monograph, a single audio cassette, etc.). There are instances, however, where the entity defined as item comprises more than one physical object (e.g., a monograph issued as two separately bound volumes, a recording issued on three separate compact discs, etc.). In terms of intellectual content and physical form, an item exemplifying a manifestation is normally the same as the manifestation itself. However, variations may occur from one item to another, even when the items exemplify the same manifestation, where those variations are the result of actions external to the intent of the producer of the manifestation (e.g., damage occurring after the item was produced, binding performed by a library, etc.). [Source: http://iflastandards.info/ns/fr/frbr/frbrer/C1004]"@en ;
           
           def:label "Ejemplar"@es ;
           
-          rdfs:isDefinedBy "http://datos.bne.es/def/" .
+          rdfs:isDefinedBy "http://datos.bne.es/def/" ;
+          
+          rdfs:comment "http://iflastandards.info/ns/fr/frbr/frbrer/C1004" .
 
 
 
@@ -3508,6 +3577,8 @@ def:C1005 rdf:type owl:Class ;
           rdfs:label "Person"@en ,
                      "Persona"@es ;
           
+          rdfs:subClassOf frbr:C1005 ;
+          
           def:label "Person"@en ;
           
           rdfs:comment "The entity defined as person encompasses individuals that are deceased as well as those that are living. For the purposes of this model persons are treated as entities only to the extent that they are involved in the creation or realization of a work (e.g., as authors, composers, artists, editors, translators, directors, performers, etc.), or are the subject of a work (e.g., as the subject of a biographical or autobiographical work, of a history, etc.). [Source: http://iflastandards.info/ns/fr/frbr/frbrer/C1005]"@en ;
@@ -3515,7 +3586,9 @@ def:C1005 rdf:type owl:Class ;
           def:label "Persona"@es ;
           
           rdfs:isDefinedBy """http://datos.bne.es/def/
-""" .
+""" ;
+          
+          rdfs:comment "http://iflastandards.info/ns/fr/frbr/frbrer/C1005" .
 
 
 
@@ -3526,73 +3599,53 @@ def:C1006 rdf:type owl:Class ;
           rdfs:label "Corporate Body"@en ,
                      "Entidad Corporativa"@es ;
           
+          rdfs:subClassOf frbr:C1006 ;
+          
           rdfs:isDefinedBy "http://datos.bne.es/def/" ;
           
           def:label "Corporate body"@en ;
           
           rdfs:comment "The entity defined as corporate body encompasses organizations and groups of individuals and-or organizations that are identified by a particular name, including occasional groups and groups that are constituted as meetings, conferences, congresses, expeditions, exhibitions, festivals, fairs, etc. The entity also encompasses organizations that act as territorial authorities, exercising or claiming to exercise government functions over a certain territory, such as a federation, a state, a region, a local municipality, etc. The entity encompasses organizations and groups that are defunct as well as those that continue to operate.  For the purposes of this model corporate bodies are treated as entities only to the extent that they are involved in the creation or realization of a work (e.g., as the sponsors or endorsers of a work, etc.), or are the subject of a work (e.g., as the subject of a history, etc.). [Source: http://iflastandards.info/ns/fr/frbr/frbrer/C1006]"@en ;
           
-          def:label "Entidad"@es .
+          def:label "Entidad"@es ;
+          
+          rdfs:comment "http://iflastandards.info/ns/fr/frbr/frbrer/C1006" .
 
 
 
 ###  http://iflastandards.info/ns/fr/frbr/frbrer/C1001
 
-def:C1001 rdf:type owl:Class ;
-                                                    
-                                                    rdfs:subClassOf frbr:C1001 ;
-                                                    
-                                                    rdfs:comment "http://iflastandards.info/ns/fr/frbr/frbrer/C1001" .
+frbr:C1001 rdf:type owl:Class .
 
 
 
 ###  http://iflastandards.info/ns/fr/frbr/frbrer/C1002
 
-def:C1002 rdf:type owl:Class ;
-                                                    
-                                                    rdfs:subClassOf frbr:C1002 ;
-                                                    
-                                                    rdfs:comment "http://iflastandards.info/ns/fr/frbr/frbrer/C1002" .
+frbr:C1002 rdf:type owl:Class .
 
 
 
 ###  http://iflastandards.info/ns/fr/frbr/frbrer/C1003
 
-def:C1003 rdf:type owl:Class ;
-                                                    
-                                                    rdfs:subClassOf frbr:C1003 ;
-                                                    
-                                                    rdfs:comment "http://iflastandards.info/ns/fr/frbr/frbrer/C1003" .
+frbr:C1003 rdf:type owl:Class .
 
 
 
 ###  http://iflastandards.info/ns/fr/frbr/frbrer/C1004
 
-def:C1004 rdf:type owl:Class ;
-                                                    
-                                                    rdfs:subClassOf frbr:C1004 ;
-                                                    
-                                                    rdfs:comment "http://iflastandards.info/ns/fr/frbr/frbrer/C1004" .
+frbr:C1004 rdf:type owl:Class .
 
 
 
 ###  http://iflastandards.info/ns/fr/frbr/frbrer/C1005
 
-def:C1005 rdf:type owl:Class ;
-                                                    
-                                                    rdfs:subClassOf frbr:C1005 ;
-                                                    
-                                                    rdfs:comment "http://iflastandards.info/ns/fr/frbr/frbrer/C1005" .
+frbr:C1005 rdf:type owl:Class .
 
 
 
 ###  http://iflastandards.info/ns/fr/frbr/frbrer/C1006
 
-def:C1006 rdf:type owl:Class ;
-                                                    
-                                                    rdfs:subClassOf frbr:C1006 ;
-                                                    
-                                                    rdfs:comment "http://iflastandards.info/ns/fr/frbr/frbrer/C1006" .
+frbr:C1006 rdf:type owl:Class .
 
 
 
